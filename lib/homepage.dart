@@ -7,7 +7,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:location_platform_interface/location_platform_interface.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'commerce.dart';
-import 'wanted.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -26,7 +25,7 @@ class HomePageState extends State<HomePage> {
   LocationData locationData;
 
   static LatLng _initialPosition;
-  static LatLng _lastMapPosition = _initialPosition;
+  //static LatLng _lastMapPosition = _initialPosition;
 
   //Stream<LocationData> stream;
   //Future<LocationData> currentLocation;
@@ -38,7 +37,12 @@ class HomePageState extends State<HomePage> {
     new Commerce('MamahDoucara','Mamah Doucara','3 rue abbeville',75010,'Paris','France','Concept Store',48.8782176, 2.348705,''),
     new Commerce('artEnDanse','Art en danse','22-40 Rue Garibaldi,',93100,'Montreuil','France','Cours de danse',48.8556777, 2.4266529,'http://art-en-danse.com/'),
     new Commerce('sadiaEsthetiqueMeaux','Sadia Esthetique Meaux','30 Avenue de l Épinette',77100,'Meaux','France','Institut de beauté',48.9592697, 2.9047805,'https://sadiaesthetique.business.site/'),
-    new Commerce('keurBoutique','Keur Boutique','39 Rue Jean-Baptiste Pigalle',75009,'Paris','France','Accessoires wax',48.880013, 2.3343074,'https://keurselection.fr/')
+    new Commerce('keurBoutique','Keur Boutique','39 Rue Jean-Baptiste Pigalle',75009,'Paris','France','Accessoires wax',48.880013, 2.3343074,'https://keurselection.fr/'),
+    new Commerce('AIA Beautyhouse','AIA Beautyhouse','Chaussée d\'ixelles, 245',1050,'Bruxelles','Belgique','Institut de beauté',50.8309644,4.3509764,''),
+    new Commerce('Le Kalu Ethnic Food','Le Kalu Ethnic Food','83 rue de l\'église Saint-Gilles',1060,'Bruxelles','Belgique','Restauration',50.8300998,4.3435072,''),
+    new Commerce('Hype Barbershop','Hype Barbershop','Klapdorp 24, Antwerpen',2000,'Anvers','Belgique','Coiffeur',51.2243635,4.4022938,''),
+    new Commerce('Loa','Loa','Hoogstraat 77,Antwerpen',2000,'Anvers','Belgique','Restauration à emporter',51.2183963,4.3971579,'')
+
   ];
 
 
@@ -177,7 +181,7 @@ class HomePageState extends State<HomePage> {
         position.latitude, position.longitude);
     setState(() {
       _initialPosition = LatLng(position.latitude, position.longitude);
-      print('${placemark[0].name}');
+      //print('${placemark[0].name}');
       print("Nouvelle position: ${position.latitude} / ${position.longitude}");
     });
   }
@@ -631,7 +635,6 @@ class HomePageState extends State<HomePage> {
                 fontSize: 18.0,
               ),
             )),
-        SizedBox(height: 5.0),
         Container(
             child: Text(
               "Closed \u00B7 Opens 17:00 Thu",
@@ -640,6 +643,7 @@ class HomePageState extends State<HomePage> {
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold),
             )),
+        SizedBox(height: 5.0),
       ],
     );
   }

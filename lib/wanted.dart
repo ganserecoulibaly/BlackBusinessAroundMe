@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class wanted extends StatelessWidget {
 
