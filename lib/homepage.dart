@@ -71,7 +71,7 @@ class HomePageState extends State<HomePage> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           centerTitle: true,
-          title: Text("Black Business Around Me",
+          title: Text("Black Business around Me",
             textAlign: TextAlign.center,),
           actions: <Widget>[
             /*
